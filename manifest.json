@@ -1,0 +1,83 @@
+{
+  "manifest_version": 3,
+  "name": "Video Auto Pause",
+  "version": "1.10.2",
+  "description": "Stops multiple video services on tab unfocus and continues on focus",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "scripting",
+    "idle"
+  ],
+  "host_permissions": [
+    "https://*.youtube.com/*",
+    "https://*.netflix.com/watch/*",
+    "https://*.youtubekids.com/*",
+    "https://*.primevideo.com/*"
+  ],
+  "homepage_url": "https://deepakmodi.netlify.app",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "icons": {
+    "16": "images/icon_16.png",
+    "32": "images/icon_32.png",
+    "64": "images/icon_64.png",
+    "128": "images/icon_128.png"
+  },
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": {
+      "16": "images/icon_16.png",
+      "32": "images/icon_32.png",
+      "64": "images/icon_64.png",
+      "128": "images/icon_128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "externally_connectable": {
+    "ids": [
+      "*"
+    ],
+    "matches": [
+      "https://*.youtube.com/*",
+      "https://*.youtubekids.com/*",
+      "https://*.netflix.com/watch/*",
+      "https://*.primevideo.com/*"
+    ]
+  },
+  "commands": {
+    "toggle-extension": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K"
+      },
+      "description": "Disable/enable extension"
+    },
+    "toggle-tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Disable/enable on active tab"
+    },
+    "toggle-play": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Space",
+        "mac": "Command+Shift+Space"
+      },
+      "description": "Toggle play/pause"
+    },
+    "toggle_mute": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+O",
+        "mac": "Command+Shift+O"
+      },
+      "description": "Toggle mute"
+    }
+  }
+}
